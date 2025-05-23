@@ -1,15 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <v-card class="pa-4" elevation="8" rounded="xl">
+    <h1 class="text-h5 mb-2">Über mich</h1>
+    <p>
+      Hier kannst du Informationen über dich, deine berufliche Laufbahn,
+      Interessen und Erfahrungen einfügen.
+    </p>
+  </v-card>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup lang="ts">
+// keine Logik erforderlich
+</script>
