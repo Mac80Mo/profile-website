@@ -50,4 +50,5 @@ watch(() => route.path, () => {
 .v-main {
   min-height: calc(100vh - 128px); /* 64px oben + 64px unten */
 }
+
 </style>
