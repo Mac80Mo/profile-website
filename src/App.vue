@@ -4,7 +4,7 @@
     <NavBar />
 
     <!-- Page Content -->
-    <v-main class="pt-16 pb-12">
+    <v-main class="main-content">
       <v-container class="pa-4" style="max-width: 1200px;" fluid>
         <v-row justify="center">
           <v-col cols="12" sm="10" md="8" lg="6">
@@ -50,5 +50,11 @@ watch(() => route.path, () => {
 .v-main {
   min-height: calc(100vh - 128px); /* 64px oben + 64px unten */
 }
+
+.main-content {
+  padding-top: 80px; /* gleichmäßiger Abstand */
+  padding-bottom: 80px;
+}
+
 
 </style>
