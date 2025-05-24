@@ -1,13 +1,60 @@
 <template>
-  <v-card class="pa-4" elevation="8" rounded="xl">
-    <h1 class="text-h5 mb-2">Über mich</h1>
-    <p>
-      Hier kannst du Informationen über dich, deine berufliche Laufbahn,
-      Interessen und Erfahrungen einfügen.
-    </p>
-  </v-card>
+  <v-container class="py-10">
+    <v-row class="justify-center align-center" style="position: relative; height: 350px;">
+      <!-- Linker Button -->
+      <v-btn
+        icon
+        @click="prevSlide"
+        class="ma-2"
+        style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%);"
+      >
+        <v-icon>mdi-chevron-left</v-icon>
+      </v-btn>
+
+      <!-- Card mit fester Größe -->
+      <v-col cols="12" md="6">
+        <v-card
+          class="pa-4"
+          elevation="8"
+          rounded="xl"
+          style="min-height: 300px; height: 100%; display: flex; flex-direction: column; justify-content: center;"
+        >
+          <component :is="cards[currentSlide].component" />
+        </v-card>
+      </v-col>
+
+      <!-- Rechter Button -->
+      <v-btn
+        icon
+        @click="nextSlide"
+        class="ma-2"
+        style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%);"
+      >
+        <v-icon>mdi-chevron-right</v-icon>
+      </v-btn>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup lang="ts">
-// keine Logik erforderlich
+import { ref } from 'vue'
+import AboutIntro from '@/components/AboutIntro.vue'
+import ZertifikateListe from '@/components/ZertifikateListe.vue'
+import KurseListe from '@/components/KurseListe.vue'
+
+const currentSlide = ref(0)
+
+const cards = [
+  { title: 'Über mich', component: AboutIntro },
+  { title: 'Zertifikate', component: ZertifikateListe },
+  { title: 'Kurse', component: KurseListe }
+]
+
+const prevSlide = () => {
+  currentSlide.value = (currentSlide.value + cards.length - 1) % cards.length
+}
+
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % cards.length
+}
 </script>
