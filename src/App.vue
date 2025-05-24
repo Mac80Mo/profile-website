@@ -14,14 +14,36 @@
       </v-container>
     </v-main>
 
+    <v-snackbar 
+      v-model="showSnackbar" 
+      timeout="3000" 
+      color="primary"
+      location="bottom end"
+    >
+    Seite befindet sich im Aufbau
+    </v-snackbar>
+
+
     <!-- Footer -->
     <FooterBar />
   </v-app>
 </template>
 
 <script setup lang="ts">
+
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const showSnackbar = ref(false)
+
+watch(() => route.path, () => {
+  showSnackbar.value = true
+})
+
+
 </script>
 
 <style scoped>
