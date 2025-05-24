@@ -33,6 +33,22 @@
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
     </v-row>
+
+    <!-- Dots Navigation -->
+    <v-row justify="center" class="mt-4">
+      <v-btn
+        v-for="(card, index) in cards"
+        :key="index"
+        icon
+        :color="currentSlide === index ? 'primary' : 'grey'"
+        @click="currentSlide = index"
+        variant="outlined"
+        size="small"
+        class="mx-1"
+      >
+        <v-icon>mdi-circle</v-icon>
+      </v-btn>
+    </v-row>
   </v-container>
 </template>
 
