@@ -12,14 +12,16 @@
 
     <!-- Card mit fester Größe -->
     <v-card
-      class="pa-4 mx-auto"
+      class="pa-4"
       elevation="8"
       rounded="xl"
-      max-width="600"
-      style="min-height: 300px; height: 100%; display: flex; flex-direction: column; justify-content: center;"
+      style="min-height: 300px; height: 100%; display: flex; flex-direction: column;"
     >
-      <component :is="cards[currentSlide].component" />
+      <div style="overflow-y: auto; max-height: 250px;">
+        <component :is="cards[currentSlide].component" />
+      </div>
     </v-card>
+
 
     <!-- Rechter Button -->
     <v-btn

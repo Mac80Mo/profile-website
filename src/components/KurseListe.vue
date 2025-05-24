@@ -3,9 +3,6 @@
     <h2 class="text-h5 mb-4">Kurse</h2>
     <v-list dense>
       <v-list-item v-for="(kurs, index) in kurse" :key="index">
-        <v-list-item-icon>
-          <v-icon color="success">mdi-play-circle</v-icon>
-        </v-list-item-icon>
         <v-list-item-title>{{ kurs }}</v-list-item-title>
       </v-list-item>
     </v-list>
@@ -14,8 +11,14 @@
 
 <script setup lang="ts">
 const kurse = [
-  'TypeScript Grundlagen',
-  'Vue 3 mit Composition API',
-  'Datenbanken mit PostgreSQL'
+  'Basic CMD - Udemy 12.09.2024',
+  'Basic PowerShell - Udemy 17.09.2024',
+  'Basic HTML5 & CSS - Udemy 24.09.2024',
+  'Bottcamp JavaScript - Udemy 05.11.2024',
+  'Basic SQL Datenbanken - Udemy 19.12.2024',
+  'Basic GIT - Udemy 27.12.2024',
+  'Python Campus: 14 Tage zur eigenen KI - Udemy 30.01.2025',
+  'Open-Source LLMs - Udemy 10.02.2025',
+  'Basic Jira - Udemy 01.03.2025' 
 ]
 </script>

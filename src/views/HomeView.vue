@@ -52,7 +52,7 @@ onMounted(() => {
   intervalId = window.setInterval(() => {
     imageIndex = (imageIndex + 1) % images.length
     currentImage.value = images[imageIndex]
-  }, 8000)
+  }, 5000)
 })
 
 onBeforeUnmount(() => {
