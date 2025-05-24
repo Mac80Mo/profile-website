@@ -1,6 +1,6 @@
 <template>
   <v-footer app color="primary" dark class="d-flex justify-center">
-    <v-btn variant="text" to="/impressum" class="text-white">
+    <v-btn variant="text" to="/impressum" class="text-black">
       Impressum
     </v-btn>
   </v-footer>

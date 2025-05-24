@@ -4,12 +4,11 @@
 
     <p>
       <strong>Name:</strong> Marcus Moser<br />
-      <strong>Anschrift:</strong> Musterstraße 123, 12345 Musterstadt<br />
-      <strong>E-Mail:</strong> marcus@example.com
+      <strong>E-Mail:</strong> marcus.moser@mail.de
     </p>
 
     <p class="mt-4 text-body-2 text-grey-darken-1">
-      Dies ist ein Beispiel-Impressum. Ersetze die Angaben durch deine echten Kontaktdaten gemäß § 5 TMG.
+      Diese Website dient ausschließlich privaten, nicht-kommerziellen Zwecken.
     </p>
   </v-card>
 </template>

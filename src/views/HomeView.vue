@@ -2,11 +2,11 @@
   <v-card class="pa-4" elevation="8" rounded="xl">
     <!-- Profilbild -->
     <v-img
-      src="/profile-website/profilbild.jpeg"
+      :src="currentImage"
       alt="Profilbild"
       width="150"
       height="150"
-      class="mx-auto mb-4"
+      class="mx-auto mb-4 image-fade"
       cover
       style="border-radius: 50%"
     />
@@ -37,7 +37,27 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const images = [
+  '/profile-website/profilbild.jpeg',
+  '/profile-website/profilbild2.jpeg'
+]
+
+const currentImage = ref(images[0])
+let imageIndex = 0
+let intervalId: number
+
+onMounted(() => {
+  intervalId = window.setInterval(() => {
+    imageIndex = (imageIndex + 1) % images.length
+    currentImage.value = images[imageIndex]
+  }, 8000)
+})
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId)
+})
 
 const name = 'Marcus Moser'
 const description = 'Umschüler zum Fachinformatiker Anwendungsentwicklung'
@@ -48,6 +68,14 @@ const toggleEducation = () => (showEducation.value = !showEducation.value)
 const education = [
   { year: '2023', title: 'IT-Vorbereitungskurse' },
   { year: '2024', title: 'Umschulung zum Fachinformatiker Anwendungsentwicklung' },
-  { year: '2025', title: 'Praktikum im Entwickler-Team' }
+  { year: '2025', title: 'Praktikum im Entwickler-Team: Full-Stack' }
 ]
 </script>
+
+<style scoped>
+
+.image-fade {
+  transition: opacity 0.8s ease-in-out;
+}
+
+</style>
