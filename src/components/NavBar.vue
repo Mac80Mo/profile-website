@@ -29,7 +29,7 @@
     <v-app-bar app color="primary" dark flat>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
 
-      <v-toolbar-title class="ml-2">Mein Profil</v-toolbar-title>
+      <v-toolbar-title class="ml-2">{{ pageTitle }}</v-toolbar-title>
 
       <v-spacer />
 
@@ -59,6 +59,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useTheme } from 'vuetify'
+import { useRoute } from 'vue-router'
 
 const drawer = ref(false)
 
@@ -73,4 +74,16 @@ const isDark = computed(() => theme.global.name.value === 'dark')
 const toggleTheme = () => {
   theme.global.name.value = isDark.value ? 'light' : 'dark'
 }
+
+const route = useRoute()
+
+const pageTitle = computed(() => {
+  const titles: Record<string, string> = {
+    '/': 'Startseite',
+    '/about': 'Über mich',
+    '/impressum': 'Impressum'
+  }
+  return titles[route.path] || 'Seite'
+})
+
 </script>
