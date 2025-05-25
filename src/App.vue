@@ -25,18 +25,22 @@
     </v-snackbar>
 
     <!-- Footer -->
-    <FooterBar />
+    <FooterBar v-if="showFooter" />
   </v-app>
 </template>
 
 <script setup lang="ts">
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const showSnackbar = ref(false)
+
+const blockedRoutes = ['/about']
+
+const showFooter = computed(() => !blockedRoutes.includes(route.path))
 
 watch(() => route.path, () => {
   showSnackbar.value = true
