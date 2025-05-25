@@ -13,9 +13,10 @@
         <v-list-item
           v-for="item in navItems"
           :key="item.title"
-          :to="item.to"
+          v-bind="item.external
+            ? { href: item.href, target: '_blank', rel: 'noopener' }
+            : { to: item.to }"
           link
-          @click="drawer = false"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -67,6 +68,7 @@ const navItems = [
   { title: 'Startseite', to: '/', icon: 'mdi-home' },
   { title: 'Über mich', to: '/about', icon: 'mdi-information' },
   { title: 'Impressum', to: '/impressum', icon: 'mdi-file-document' },
+  { title: 'Projekte', external: true, href: 'https://github.com/Mac80Mo', icon: 'mdi-github' }
 ]
 
 const theme = useTheme()

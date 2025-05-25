@@ -2,8 +2,10 @@
   <div>
     <h2 class="text-h5 mb-4">Über mich</h2>
     <p>
-      Ich bin Marcus Moser, ein engagierter Umschüler zum Fachinformatiker
-      für Anwendungsentwicklung mit einer Leidenschaft für moderne Webtechnologien.
+      Ich bin Marcus, ein engagierter Umschüler zum Fachinformatiker
+      für Anwendungsentwicklung. Hier finden Sie meine Zertifikate und Kursteilnahmen. 
+      Im Menü unter Projekte einen Überblick über bisher realisierte oder in Arbeit befindlicher Projekte.
+      Viel Spaß! 
     </p>
   </div>
 </template>
