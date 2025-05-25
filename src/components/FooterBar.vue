@@ -2,7 +2,7 @@
   <v-footer app color="primary" dark>
     <v-container class="text-center">
       <!-- Impressum -->
-      <p class="mb-0">© 2025 Marcus Moser</p>
+      <p class="mb-0">© 2025</p>
     </v-container>
   </v-footer>
 </template>

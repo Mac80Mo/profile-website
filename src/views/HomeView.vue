@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
 })
 
 const name = 'Marcus Moser'
-const description = 'Aktuell: Umschüler zum Fachinformatiker Anwendungsentwicklung'
+const description = 'Aktuell: Umschüler zum Fachinformatiker Anwendungsentwicklung bis Januar 2026'
 
 const showEducation = ref(false)
 const toggleEducation = () => (showEducation.value = !showEducation.value)

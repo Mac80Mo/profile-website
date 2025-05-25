@@ -1,11 +1,12 @@
 <template>
   <div>
-    <h2 class="text-h5 mb-4">Über mich</h2>
+    <h2 class="text-h5 mb-4">Hallo!</h2>
     <p>
       Ich bin Marcus, ein engagierter Umschüler zum Fachinformatiker
-      für Anwendungsentwicklung. Hier finden Sie meine Zertifikate und Kursteilnahmen. 
-      Im Menü unter Projekte einen Überblick über bisher realisierte oder in Arbeit befindlicher Projekte.
-      Viel Spaß! 
+      für Anwendungsentwicklung.<br> 
+      Hier finden Sie meine bisherigen <strong>Zertifikate</strong> und <strong>Kursteilnahmen</strong>.<br> 
+      Im Menü unter <strong>Projekte</strong> einen Überblick über bisher realisierte oder in Arbeit befindlicher Projekte.<br>
+      <br>Viel Spaß! 
     </p>
   </div>
 </template>

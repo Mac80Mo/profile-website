@@ -8,13 +8,13 @@
 
         <!-- Tooltip für E-Mail -->
         <strong>E-Mail:</strong>
-        <v-tooltip location="top">
+        <v-tooltip location="top" color="surface">
           <template #activator="{ props }">
-            <span v-bind="props" class="text-primary">
+            <span v-bind="props" class="text-primary cursor-pointer">
               marcus.moser@mail.de
             </span>
           </template>
-          <span>Du kannst mir gerne schreiben!</span>
+          <span class="text-on-surface">Ich freue mich auf Deine Nachricht!</span>
         </v-tooltip>
       </p>
 
