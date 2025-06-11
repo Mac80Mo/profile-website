@@ -2,7 +2,7 @@
   <v-card class="pa-4 profile-card" elevation="8" rounded="xl">
     <!-- Video mit animiertem Orbit-Effekt -->
     <div class="video-wrapper">
-      <div class="orbit-dot"></div>
+      <div class="pulse-background"></div>
       <video
         autoplay
         muted
@@ -82,5 +82,34 @@ const education = [
   height: 100%;
   z-index: 1;
   position: relative;
+}
+
+.pulse-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(var(--v-theme-primary));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  filter: blur(20px);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.3;
+  }
 }
 </style>

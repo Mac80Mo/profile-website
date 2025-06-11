@@ -13,6 +13,7 @@ import router from './router'
 const vuetify = createVuetify({
   theme: {
     defaultTheme: 'dark',
+    variablesTheme: true,
     themes: {
       light: {
         dark: false,
