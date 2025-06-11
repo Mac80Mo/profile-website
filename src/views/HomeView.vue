@@ -12,7 +12,7 @@
         height="150"
         class="profile-video"
       >
-        <source src="/profile-website/profilvideo.mp4" type="video/mp4" />
+        <source src="/profilvideo.mp4" type="video/mp4" />
         Dein Browser unterstützt das Video-Tag nicht.
       </video>
     </div>
