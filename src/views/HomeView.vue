@@ -17,9 +17,9 @@
       </video>
     </div>
 
-    <!-- Name und Beschreibung -->
-    <h1 class="text-h5 mb-2">{{ name }}</h1>
-    <p class="text-body-1 mb-4">{{ description }}</p>
+    <!-- Name und Beschreibung mit Typewriter-Effekt -->
+    <h1 class="text-h5 mb-2">{{ typedName }}</h1>
+    <p class="text-body-1 mb-4">{{ typedDescription }}</p>
 
     <!-- Bildung anzeigen -->
     <v-btn @click="toggleEducation" color="primary">
@@ -45,17 +45,41 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 
-onMounted(() => {
+// Typewriter-Effekt Logik
+const typedName = ref('')
+const typedDescription = ref('')
+const name = 'Marcus Moser'
+const description = 'Aktuell: Umschüler zum Fachinformatiker Anwendungsentwicklung bis Januar 2026'
+
+const typeText = (text: string, target: Ref<string>, speed: number): Promise<void> => {
+  return new Promise((resolve) => {
+    let currentIndex = 0
+    const interval = setInterval(() => {
+      if (currentIndex < text.length) {
+        target.value += text[currentIndex]
+        currentIndex++
+      } else {
+        clearInterval(interval)
+        resolve()
+      }
+    }, speed)
+  })
+}
+
+onMounted(async () => {
+  // Video Geschwindigkeit anpassen
   const video = document.querySelector('video')
   if (video) {
-    video.playbackRate = 0.5 // langsamere Wiedergabe
+    video.playbackRate = 0.5
   }
+
+  // Typewriter-Effekt starten
+  await typeText(name, typedName, 150)
+  await new Promise(resolve => setTimeout(resolve, 500)) // Kurze Pause
+  await typeText(description, typedDescription, 50)
 })
 
-const name = 'Marcus Moser'
-const description =
-  'Aktuell: Umschüler zum Fachinformatiker Anwendungsentwicklung bis Januar 2026'
-
+// Education Toggle
 const showEducation = ref(false)
 const toggleEducation = () => (showEducation.value = !showEducation.value)
 
@@ -104,7 +128,7 @@ const education = [
     opacity: 0.3;
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.0);
     opacity: 0.5;
   }
   100% {
