@@ -104,7 +104,7 @@ const education = [
     opacity: 0.3;
   }
   50% {
-    transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(1.2);
     opacity: 0.5;
   }
   100% {
