@@ -48,7 +48,7 @@ import { ref, onMounted } from 'vue'
 onMounted(() => {
   const video = document.querySelector('video')
   if (video) {
-    video.playbackRate = 0.75 // langsamere Wiedergabe
+    video.playbackRate = 0.5 // langsamere Wiedergabe
   }
 })
 
