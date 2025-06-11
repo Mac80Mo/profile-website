@@ -1,15 +1,21 @@
 <template>
-  <v-card class="pa-4" elevation="8" rounded="xl">
-    <!-- Profilbild -->
-    <v-img
-      :src="currentImage"
-      alt="Profilbild"
-      width="150"
-      height="150"
-      class="mx-auto mb-4 image-fade"
-      cover
-      style="border-radius: 50%"
-    />
+  <v-card class="pa-4 profile-card" elevation="8" rounded="xl">
+    <!-- Video mit animiertem Orbit-Effekt -->
+    <div class="video-wrapper">
+      <div class="orbit-dot"></div>
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        width="150"
+        height="150"
+        class="profile-video"
+      >
+        <source src="/profile-website/profilvideo.mp4" type="video/mp4" />
+        Dein Browser unterstützt das Video-Tag nicht.
+      </video>
+    </div>
 
     <!-- Name und Beschreibung -->
     <h1 class="text-h5 mb-2">{{ name }}</h1>
@@ -37,30 +43,18 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const images = [
-  '/profile-website/profilbild.jpeg',
-  '/profile-website/profilbild2.jpeg'
-]
-
-const currentImage = ref(images[0])
-let imageIndex = 0
-let intervalId: number
+import { ref, onMounted } from 'vue'
 
 onMounted(() => {
-  intervalId = window.setInterval(() => {
-    imageIndex = (imageIndex + 1) % images.length
-    currentImage.value = images[imageIndex]
-  }, 5000)
-})
-
-onBeforeUnmount(() => {
-  clearInterval(intervalId)
+  const video = document.querySelector('video')
+  if (video) {
+    video.playbackRate = 0.75 // langsamere Wiedergabe
+  }
 })
 
 const name = 'Marcus Moser'
-const description = 'Aktuell: Umschüler zum Fachinformatiker Anwendungsentwicklung bis Januar 2026'
+const description =
+  'Aktuell: Umschüler zum Fachinformatiker Anwendungsentwicklung bis Januar 2026'
 
 const showEducation = ref(false)
 const toggleEducation = () => (showEducation.value = !showEducation.value)
@@ -73,9 +67,20 @@ const education = [
 </script>
 
 <style scoped>
-
-.image-fade {
-  transition: opacity 0.8s ease-in-out;
+.video-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem auto;
 }
 
+.profile-video {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
 </style>
