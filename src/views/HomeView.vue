@@ -1,5 +1,10 @@
 <template>
-  <v-card class="pa-4 profile-card" elevation="8" rounded="xl">
+  <v-card
+    class="pa-4 profile-card"
+    elevation="0"
+    rounded="xl"
+    style="background-color: transparent; box-shadow: none;"
+  >
     <!-- Video mit animiertem Orbit-Effekt -->
     <div class="video-wrapper">
       <div class="pulse-background"></div>
@@ -75,7 +80,7 @@ onMounted(async () => {
 
   // Typewriter-Effekt starten
   await typeText(name, typedName, 150)
-  await new Promise(resolve => setTimeout(resolve, 500)) // Kurze Pause
+  await new Promise(resolve => setTimeout(resolve, 500))
   await typeText(description, typedDescription, 50)
 })
 
@@ -91,6 +96,12 @@ const education = [
 </script>
 
 <style scoped>
+/* Der Wrapper bleibt erhalten, die Card wird durch inline-styles unsichtbar */
+.profile-card {
+  /* Optional: falls du später noch spezifische Overrides brauchst */
+}
+
+/* Video-Styling */
 .video-wrapper {
   position: relative;
   width: 150px;
@@ -136,6 +147,4 @@ const education = [
     opacity: 0.3;
   }
 }
-
-
 </style>
