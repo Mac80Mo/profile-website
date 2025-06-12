@@ -136,4 +136,6 @@ const education = [
     opacity: 0.3;
   }
 }
+
+
 </style>
