@@ -96,11 +96,6 @@ const education = [
 </script>
 
 <style scoped>
-/* Der Wrapper bleibt erhalten, die Card wird durch inline-styles unsichtbar */
-.profile-card {
-  /* Optional: falls du später noch spezifische Overrides brauchst */
-}
-
 /* Video-Styling */
 .video-wrapper {
   position: relative;
