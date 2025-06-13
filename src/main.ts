@@ -10,10 +10,12 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 // Router
 import router from './router'
 
+const storedTheme = localStorage.getItem('theme') || 'dark'
+localStorage.setItem('theme', storedTheme);
+
 const vuetify = createVuetify({
   theme: {
-    defaultTheme: 'dark',
-    variablesTheme: true,
+    defaultTheme: storedTheme,
     themes: {
       light: {
         dark: false,
@@ -31,6 +33,7 @@ const vuetify = createVuetify({
           primary: '#FF9800',
           secondary: '#BDBDBD',
           surface: '#1E1E1E',
+          'on-surface': '#f5f5f5'
         },
       },
     },

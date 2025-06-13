@@ -43,7 +43,7 @@
             icon
             variant="text"
             :color="isDark ? 'black' : 'white'"
-            aria-label="Hell-/Deunkelmodus umschalten"
+            aria-label="Hell-/Dunkelmodus umschalten"
           >
             <v-icon>
               {{ isDark ? 'mdi-white-balance-sunny' : 'mdi-weather-night' }}
@@ -75,7 +75,9 @@ const navItems = [
 const theme = useTheme()
 const isDark = computed(() => theme.global.name.value === 'dark')
 const toggleTheme = () => {
-  theme.global.name.value = isDark.value ? 'light' : 'dark'
+  const newTheme = isDark.value ? 'light' : 'dark'
+  theme.global.name.value = newTheme
+  localStorage.setItem('theme', newTheme)
 }
 
 const route = useRoute()

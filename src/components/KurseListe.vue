@@ -15,7 +15,7 @@ const kurse = [
   'Basic CMD - Udemy 12.09.2024',
   'Basic PowerShell - Udemy 17.09.2024',
   'Basic HTML5 & CSS - Udemy 24.09.2024',
-  'Bottcamp JavaScript - Udemy 05.11.2024',
+  'Bootcamp JavaScript - Udemy 05.11.2024',
   'Basic SQL Datenbanken - Udemy 19.12.2024',
   'Java Masterkurs - Programmieren Starten GmbH 17.12.2024',
   'Basic GIT - Udemy 27.12.2024',
