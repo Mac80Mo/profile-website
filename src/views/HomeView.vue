@@ -9,6 +9,7 @@
     <div class="video-wrapper">
       <div class="pulse-background"></div>
       <video
+        aria-label="Profilvideo"
         autoplay
         muted
         loop
@@ -48,7 +49,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, type Ref } from 'vue'
 
 // Typewriter-Effekt Logik
 const typedName = ref('')

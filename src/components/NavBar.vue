@@ -28,7 +28,7 @@
 
     <!-- Obere App Bar -->
     <v-app-bar app color="primary" dark flat>
-      <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <v-app-bar-nav-icon @click="drawer = !drawer" aria-label="Menü öffnen" />
 
       <v-toolbar-title class="ml-2">{{ pageTitle }}</v-toolbar-title>
 
@@ -43,6 +43,7 @@
             icon
             variant="text"
             :color="isDark ? 'black' : 'white'"
+            aria-label="Hell-/Deunkelmodus umschalten"
           >
             <v-icon>
               {{ isDark ? 'mdi-white-balance-sunny' : 'mdi-weather-night' }}
