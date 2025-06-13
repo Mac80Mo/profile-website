@@ -13,7 +13,5 @@
 const zertifikate = [
   'EXIN Agile Scrum Foundation 30.08.2024',
   'PCEP OpenEDG Python Institute 17.11.2024',
-  'Python Masterkurs - Programmieren Starten GmbH 04.04.2024',
-  'Java Masterkurs - Programmieren Starten GmbH 17.12.2024'
 ]
 </script>
