@@ -19,6 +19,7 @@ const kurse = [
   'Basic GIT - Udemy 27.12.2024',
   'Python Campus: 14 Tage zur eigenen KI - Udemy 30.01.2025',
   'Open-Source LLMs - Udemy 10.02.2025',
-  'Basic Jira - Udemy 01.03.2025' 
+  'Basic Jira - Udemy 01.03.2025',
+  'Basic React 2 hrs. - Udemy 13.06.2025' 
 ]
 </script>
