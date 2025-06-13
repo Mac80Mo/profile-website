@@ -17,7 +17,7 @@
     <!-- Snackbar -->
     <v-snackbar 
       v-model="showSnackbar" 
-      timeout="3000" 
+      timeout="5000" 
       color="primary"
       location="bottom end"
     >
@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
-import { ref, watch, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -42,7 +42,7 @@ const blockedRoutes = ['/about']
 
 const showFooter = computed(() => !blockedRoutes.includes(route.path))
 
-watch(() => route.path, () => {
+onMounted(() => {
   showSnackbar.value = true
 })
 </script>

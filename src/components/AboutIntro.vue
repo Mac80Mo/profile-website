@@ -2,7 +2,7 @@
   <div>
     <h2 class="text-h5 mb-4">Hallo!</h2>
     <p>
-      Ich bin Marcus, ein engagierter Umschüler zum Fachinformatiker
+      Ich bin Marcus,<br>ein engagierter Umschüler zum Fachinformatiker
       für Anwendungsentwicklung.<br> 
       Hier finden Sie meine bisherigen <strong>Zertifikate</strong> und <strong>Kursteilnahmen</strong>.<br> 
       Im Menü unter <strong>Projekte</strong> einen Überblick über bisher realisierte oder in Arbeit befindlicher Projekte.<br>
