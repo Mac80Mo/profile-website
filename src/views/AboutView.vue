@@ -61,8 +61,8 @@ const currentSlide = ref(0)
 
 const cards = [
   { title: 'Über mich', component: AboutIntro },
-  { title: 'Zertifikate', component: ZertifikateListe },
-  { title: 'Kurse', component: KurseListe }
+  { title: 'Kurse', component: KurseListe },
+  { title: 'Zertifikate', component: ZertifikateListe }
 ]
 
 const prevSlide = () => {
